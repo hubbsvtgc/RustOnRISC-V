@@ -48,6 +48,13 @@ The symbol `_etext' will be defined as the address following the last `.bss' inp
 
 SECTIONS
 {
+    .mtvec_base :
+    {
+         KEEP(*(.mtvec_base))
+    }
+    > ram
+    . = ALIGN(4);
+
     .code :
     {
          *(.code*)
